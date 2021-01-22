@@ -28,9 +28,9 @@ var getWeather = function(city) {
     fetch(apiURL).then(function(response) {
         if(response.ok) {
         response.json().then(function (response) {
-            console.log(response);
-            console.log(response.name)
-            console.log(response.weather[0].icon)
+            //console.log(response);
+            //console.log(response.name)
+            //console.log(response.weather[0].icon)
 
             var temperatureF = (response.main.temp - 273.15) * 1.80 + 32;
             console.log(Math.floor(temperatureF))
@@ -61,7 +61,7 @@ function getCurrentConditions (response) {
     var temperatureF = (response.main.temp - 273.15) * 1.80 + 32;
     temperatureF = Math.floor(temperatureF);
 
-//get the weather details and set content
+    //get the weather details and set content
     var card = $("<div>").addClass("card");
     var cardBody = $("<div>").addClass("card-body");
     var city = $("<h4>").addClass("card-title").text(response.name);
@@ -71,13 +71,31 @@ function getCurrentConditions (response) {
     var wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + response.wind.speed + " MPH");
     var image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png")
 
-$('#current-weather').empty();
+
+    $('#current-weather').empty();
+    
     //add the details to the page
     city.append(cityDate, image)
     cardBody.append(city, temperature, humidity, wind);
     card.append(cardBody);
     $("#current-weather").append(card)
+
+    //get uv index
+    var latitude = (response.coord.lat);
+    var longitude = (response.coord.lon);
+
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + apiKey).then(function (response){
+        if(response.ok){
+            response.json().then(response) 
+                var uvIndexValue = (response.current.uvi)
+                var uvIndex = $("<p>").addClass("card-text current-uv").text("UV Index:" + (uvIndexValue))
+
+                cardBody.append(uvIndex)
+            }
+
+    })
 }
+
 
 function getCurrentForecast () {
     var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + apiKey;
