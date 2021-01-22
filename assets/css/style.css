@@ -45,3 +45,15 @@
 .show {
     display: block;
 }
+
+.uv-index-high {
+    color: red;
+}
+
+.uv-index-med {
+    color: orangered;
+}
+
+.uv-index-low {
+    color: green;
+}
