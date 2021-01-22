@@ -114,7 +114,9 @@ function getCurrentForecast () {
     } else {
             alert("Error: " + response.statusText)
       } }
-      .catch(function(error) { alert("Unable to connect to the server."); }
+      .catch(function(error) { alert("Unable to connect to the server."); })
+}
+
     
 
 cityFormEl.addEventListener("submit", formSubmitHandler)
