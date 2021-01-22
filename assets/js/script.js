@@ -94,6 +94,14 @@ function getCurrentConditions (response) {
                 var uvIndexValue = (response.current.uvi)
                 var uvIndex = $("<p>").addClass("card-text current-uv").text("UV Index:" + (uvIndexValue))
 
+                if (uvIndexValue >= 6) {
+                    uvIndex.addClass("uv-index-high")
+                } else if (uvIndexValue >= 3 && uvIndexValue <7) {
+                    uvIndex.addClass("uv-index-med")
+                } else {
+                    uvIndex.addClass("uv-index-low")
+                }
+
                 cardBody.append(uvIndex)
             }
 
