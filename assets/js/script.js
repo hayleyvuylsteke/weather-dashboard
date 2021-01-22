@@ -3,6 +3,8 @@ var currentForecastContainerEl = document.querySelector("#today-forecast-contain
 var citySearchTerm = document.querySelector("#city-search-term");
 var apiKey = "&appid=2bb40ff233444e2f0164a4a01ea608db"
 var subheadCity = document.querySelector("#city-search-term")
+var cityForList = $("#city").val();
+
 
 var date = new Date();
 
@@ -10,8 +12,8 @@ var formSubmitHandler = function(event) {
     event.preventDefault();
     //$('current-weather-header').addClass('show')
     //$('5-day-forecast-header').addClass('show')
-    $('current-weather-header').removeClass('hide')
-    $('5-day-forecast-header').removeClass('hide')
+    $("current-weather-header").removeClass("hide")
+    $("5-day-forecast-header").removeClass("hide")
     
     
     //grab city and clear search box
@@ -37,11 +39,11 @@ var getWeather = function(city) {
             //console.log(response.weather[0].icon)
 
             var temperatureF = (response.main.temp - 273.15) * 1.80 + 32;
-            console.log(Math.floor(temperatureF))
+            //console.log(Math.floor(temperatureF))
 
             subheadCity.innerText = city;
             
-            addToList;
+            addToList(response);
             getCurrentConditions(response);
             getCurrentForecast(response);
           });
@@ -55,9 +57,12 @@ var getWeather = function(city) {
 }
 
 //add city to recent searches list
-function addToList() {
-    var listItem = $("<li>").addClass("list-group-item").text(city);
-    $(".list").append(listItem);
+function addToList(response) {
+    var listItem = $("<li>").addClass("list-group-item").text(response.name);
+    console.log(listItem);
+    console.log(citySearchTerm);
+    $("#list").append(listItem);
+
 }
 
 
