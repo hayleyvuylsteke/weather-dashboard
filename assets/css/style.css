@@ -33,3 +33,15 @@
     background-color: #FFFFFF;
     color: #373737;
 }
+
+.current-weather-city {
+    font-weight: bolder;
+    color:#6f42c1;
+}
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

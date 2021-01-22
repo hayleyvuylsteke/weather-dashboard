@@ -8,7 +8,11 @@ var date = new Date();
 
 var formSubmitHandler = function(event) {
     event.preventDefault();
-    $('current-weather-header').addClass('show')
+    //$('current-weather-header').addClass('show')
+    //$('5-day-forecast-header').addClass('show')
+    $('current-weather-header').removeClass('hide')
+    $('5-day-forecast-header').removeClass('hide')
+    
     
     //grab city and clear search box
     var city = $("#city").val();
@@ -64,8 +68,8 @@ function getCurrentConditions (response) {
     //get the weather details and set content
     var card = $("<div>").addClass("card");
     var cardBody = $("<div>").addClass("card-body");
-    var city = $("<h4>").addClass("card-title").text(response.name);
-    var cityDate = $("<h4>").addClass("card-title").text(date.toLocaleDateString('en-US'));
+    var city = $("<h4>").addClass("card-title current-weather-city").text(response.name);
+    var cityDate = $("<h5>").addClass("card-title").text(date.toLocaleDateString('en-US'));
     var temperature = $("<p>").addClass("card-text current-temp").text("Temperature: " + temperatureF + " °F");
     var humidity = $("<p>").addClass("card-text current-humidity").text("Humidity: " + response.main.humidity + "%");
     var wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + response.wind.speed + " MPH");
