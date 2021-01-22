@@ -2,6 +2,7 @@ var cityFormEl = document.querySelector("#city-form");
 var currentForecastContainerEl = document.querySelector("#today-forecast-container");
 var citySearchTerm = document.querySelector("#city-search-term");
 var apiKey = "&appid=2bb40ff233444e2f0164a4a01ea608db"
+var subheadCity = document.querySelector("#city-search-term")
 
 var date = new Date();
 
@@ -34,8 +35,11 @@ var getWeather = function(city) {
             var temperatureF = (response.main.temp - 273.15) * 1.80 + 32;
             console.log(Math.floor(temperatureF))
 
+            subheadCity.innerText = city;
+            
             addToList;
             getCurrentConditions(response);
+            getCurrentForecast(response);
           });
         } else {
             alert("Error: " + response.statusText)
@@ -56,7 +60,6 @@ function addToList() {
 function getCurrentConditions (response) {
     var temperatureF = (response.main.temp - 273.15) * 1.80 + 32;
     temperatureF = Math.floor(temperatureF);
-
 
 //get the weather details and set content
     var card = $("<div>").addClass("card");
@@ -82,8 +85,6 @@ function getCurrentForecast () {
     fetch(apiURL).then(function(response) {
         if(response.ok) {
         response.json().then(function (response) {
-            //console.log(response);
-            //console.log(response.dt)
 
             $('#forecast').empty();
 
