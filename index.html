@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+    <header class="jumbotron text-center page-header">
+        <h1 class="display-3">Weather Dashboard</h1>
+        <p class="lead">Get the weather where and when it matters to you.</p>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <h3 class="card-header search-header">Search by City:</h3>
+                    <form class="form" id="city-form">
+                        <label class="form-label" for="city">City</label>
+                        <input name="city" id="city" type="text" class="form-input" />
+                        <button type="submit" class="btn submit-button" id="search-button">Get the forecast ▹</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="card">
+                    <h3 class="card-header search-header hide" id="current-weather-header">The current weather in <span id="city-search-term"></span>:</h3>
+                        <div id="current-weather" class="mt-4"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <h3 class="card-header search-header">Your Recent Searches:</h3>
+                    <div id="search-history-container">
+                        <ul class="list-group list-group-flush list"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                <h3 class="card-header search-header">The 5-day Forecast:</h3>
+                    <div id="forecast"></div>
+            </div>
+        </div>
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

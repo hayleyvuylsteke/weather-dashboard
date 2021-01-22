@@ -1,0 +1,35 @@
+.page-header {
+    text-align: center;
+    background-color: #6f42c1;
+    color: #FFFFFF;
+}
+
+.search-header {
+    background-color: #373737;
+    color: #ffffff;
+}
+
+.form {
+    margin: 10px;
+}
+.submit-button {
+    background-color: #6f42c1;
+    border-radius: 5px;
+    color: #ffffff;
+}
+.flex-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.five-day-forecast-header {
+    background-color: #6f42c1;
+    color: #ffffff;
+
+}
+
+.five-day-forecast-body {
+    background-color: #FFFFFF;
+    color: #373737;
+}
