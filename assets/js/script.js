@@ -140,9 +140,9 @@ function getForecastUpdated(response) {
 
             $('#forecast').empty();
 
-            for (var x=6; x < response.length; i += 8) {
+            for (var x=0; x < response.length; x++) {
                 var forecastDate = $("<h5>");
-                var forecastPosition = (x +2) / 8;
+                var forecastPosition = (x + 1);
 
                 $("#forecast-date" + forecastPosition).empty();
                 $("#forecast-date" + forecastPosition).append(forecastDate.text(nowMoment.add(1, "days").format("M/D/YYYY")));
