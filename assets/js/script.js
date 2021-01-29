@@ -65,7 +65,6 @@ function addToList(response) {
     console.log("in add to list function")
     var listItem = $("<li>").addClass("list-group-item")
     var buttonItem = document.createElement("button")
-    buttonItem.setAttribute("#prev-city-button")
     buttonItem.name = "prevCityBtn";
     buttonItem.textContent = response.name
     
