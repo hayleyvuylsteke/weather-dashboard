@@ -38,22 +38,22 @@
     font-weight: bolder;
     color:#6f42c1;
 }
-.hide {
-    display: none;
-}
-
-.show {
-    display: block;
-}
 
 .uv-index-high {
-    color: red;
+    color: white;
+    background-color: red;
 }
 
 .uv-index-med {
-    color: orangered;
+    color: white;
+    background-color: orangered;
 }
 
 .uv-index-low {
-    color: green;
+    color: white;
+    background-color: green;
+}
+
+.no-border {
+    border: white;
 }

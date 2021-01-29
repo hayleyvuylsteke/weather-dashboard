@@ -28,8 +28,18 @@
             </div>
             <div class="col-12 col-md-8">
                 <div class="card">
-                    <h3 class="card-header search-header hide" id="current-weather-header">The current weather in <span id="city-search-term"></span>:</h3>
-                        <div id="current-weather" class="mt-4"></div>
+                        <div id="current-weather" class="mt-4">
+                            <div class="card-body">
+                                <div id="city-date-icon">
+                                    <span id="city-name"></span>
+                                    <span id="current-icon"></span>
+                                </div>
+                                <p class="card-text" id="current-temp"></p>
+                                <p class="card-text" id="current-humidity"></p>
+                                <p class="card-text" id="current-wind"></p>
+                                <p class="card-text" id="current-uv"></p>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -40,49 +50,48 @@
                 <div class="card">
                     <h3 class="card-header search-header">Your Recent Searches:</h3>
                     <div id="search-history-container">
-                        <ul class="list-group list-group-flush list" id="list"></ul>
+                        <ul class="list-group list-group-flush list" id="city-list"></ul>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-8">
-                <h3 class="card-header search-header 5-day-forecast-header hide">The 5-day Forecast:</h3>
                     <div id="forecast-cards">
-                        <div class="card forecast">
+                        <div class="card forecast no-border">
                             <div id="forecast-1" class="card-body">
                                 <span class="card-title" id="forecast-date1"></span>
-                                <span class="card-text" id="forecast-icon1"></span>
+                                <span id="forecast-icon1"></span>
                                 <p class="card-text" id="forecast-temp1"></p>
                                 <p class="card-text" id="forecast-humidity1"></p>
                             </div>
                         </div>
-                        <div class="card forecast">
+                        <div class="card forecast no-border">
                             <div id="forecast-2" class="card-body">
                                 <span class="card-title" id="forecast-date2"></span>
-                                <span class="card-text" id="forecast-icon2"></span>
+                                <span id="forecast-icon2"></span>
                                 <p class="card-text" id="forecast-temp2"></p>
                                 <p class="card-text" id="forecast-humidity2"></p>
                             </div>
                         </div>
-                        <div class="card forecast">
+                        <div class="card forecast no-border">
                             <div id="forecast-3" class="card-body">
                                 <span class="card-title" id="forecast-date3"></span>
-                                <span class="card-text" id="forecast-icon3"></span>
-                                <p class="card-text" id="forecast-temp3"></p>
+                                <span id="forecast-icon3"></span>
+                                <p class="card-text" id="forecast-temp3 no-border"></p>
                                 <p class="card-text" id="forecast-humidity3"></p>
                             </div>
                         </div>
-                        <div class="card forecast">
+                        <div class="card forecast no-border">
                             <div id="forecast-4" class="card-body">
                                 <span class="card-title" id="forecast-date4"></span>
-                                <span class="card-text" id="forecast-icon4"></span>
+                                <span id="forecast-icon4"></span>
                                 <p class="card-text" id="forecast-temp4"></p>
                                 <p class="card-text" id="forecast-humidity4"></p>
                             </div>
                         </div>
-                        <div class="card forecast">
+                        <div class="card forecast no-border">
                             <div id="forecast-5" class="card-body">
                                 <span class="card-title" id="forecast-date5"></span>
-                                <span class="card-text" id="forecast-icon5"></span>
+                                <span id="forecast-icon5"></span>
                                 <p class="card-text" id="forecast-temp5"></p>
                                 <p class="card-text" id="forecast-humidity5"></p>
                             </div>
